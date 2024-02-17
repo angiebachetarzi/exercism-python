@@ -4,8 +4,7 @@ def steps(number):
 
 def conjecture(number, steps):
     if number == 1: return steps
-    else:
-        if number % 2 == 0:
+    elif number % 2 == 0:
             return conjecture(number//2, steps + 1)
-        else:
+    else:
             return conjecture(number * 3 + 1, steps + 1)
