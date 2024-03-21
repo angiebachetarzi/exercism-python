@@ -36,10 +36,7 @@ def remove_suffix_ness(word):
 
     For example: "heaviness" becomes "heavy", but "sadness" becomes "sad".
     """
-
-    if word[-5:] == 'iness':
-        return word.replace('iness', 'y')
-    return word.replace('ness', '')
+    return word.replace('iness', 'y') if word.endswith('iness') else word[:-4]
 
 
 def adjective_to_verb(sentence, index):
@@ -52,4 +49,4 @@ def adjective_to_verb(sentence, index):
     For example, ("It got dark as the sun set.", 2) becomes "darken".
     """
 
-    return sentence.replace('.', '').split()[index] + 'en'
+    return sentence.strip('.').split()[index] + 'en'
