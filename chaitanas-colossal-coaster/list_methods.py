@@ -10,7 +10,11 @@ def add_me_to_the_queue(express_queue, normal_queue, ticket_type, person_name):
     :param person_name: str - name of person to add to a queue.
     :return: list - the (updated) queue the name was added to.
     """
-    express_queue.append(person_name) if ticket_type == 1 else normal_queue.append(person_name)
+    #since its modifying a list its not recommended to use ternary
+    if ticket_type == 1:
+        express_queue.append(person_name)
+    else:
+        normal_queue.append(person_name)
     return express_queue if ticket_type == 1 else normal_queue
 
 
